@@ -1,0 +1,32 @@
+/*Select statement 
+* == every thing
+or we can say top, Distinct, count, as, max, min, avg
+*/
+
+select * 
+from EmployeeDemographics
+
+select Top 5 *
+From EmployeeDemographics
+/*to select top 5 of every column */
+
+select distinct(Age)
+From EmployeeDemographics
+/*to select distinct numbers in ae column */
+
+select count(LastName) As LastNameCount
+From EmployeeDemographics
+/*counts number of the last names that we have*/
+
+select max(salary)
+from EmployeeSalary
+/*finds the max amount of salary in that column*/
+
+Select *
+From SQLTutorial2023.dbo.EmployeeSalary
+/*giving the adress using coding*/
+
+
+select avg(salary) as salaryAverage
+From EmployeeSalary
+/*finding average */
