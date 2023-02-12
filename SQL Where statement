@@ -1,0 +1,31 @@
+/* We want to use Where statement
+=,<>,<,>, And,Or,Like,Null,Not null, In
+*/
+
+
+select *
+From EmployeeDemographics
+Where Age> 30
+
+select *
+From EmployeeDemographics
+Where Age <= 30 AND Gender= 'Male'
+
+select *
+From EmployeeDemographics
+Where Age <= 30 OR Gender= 'Male'
+
+
+select *
+From EmployeeDemographics
+Where LastName like 'S%ott%'
+/* looking for letters in the last names, order is important*/
+
+select *
+From EmployeeDemographics
+Where LastName is not null
+
+select *
+From EmployeeDemographics
+Where FirstName IN ('Jim', 'Michael')
+/*instead of writing FirstName= 'jim' and FirstName = 'Micheal' we can use in*/
