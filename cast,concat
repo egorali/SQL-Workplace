@@ -1,0 +1,32 @@
+select Purchase_price
+from `customer_data1.customer_purchase`
+order By
+purchase_price DESC 
+
+ /* but the result i not as we wanted data bse considered numbers as strings*/
+
+select 
+CAST(Purchase_price as float64)
+from `customer_data1.customer_purchase`
+order By
+CAST(Purchase_price as float64) DESC 
+
+/* now the correct order is listed*/
+
+/* using the cast again*/
+select cast(date as date) as date_only, purchase_price
+from `customer_data1.customer_purchase`
+where
+date between '2020-12-01' and '2020-12-31'
+
+/* using concat*/
+select 
+concat(product_code,product_color) as new_product_code
+from `customer_data1.customer_purchase`
+where
+product='couch'
+
+/* using coalesce*/
+select 
+coalesce(product,product_code) as product_info
+from `customer_data1.customer_purchase`
