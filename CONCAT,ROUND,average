@@ -1,0 +1,15 @@
+--from public dataset-- 
+SELECT
+usertype,
+concat(start_station_name,'to', end_station_name) as route,
+count(*) as num_trips,
+Round(avg(cast(tripduration as int64)/60),2) as duration
+ FROM `bigquery-public-data.new_york_citibike.citibike_trips` 
+
+ --because we are using count and concat or average in our select clause we have to use group by for adding them to summary--
+
+GROUP BY
+start_station_name,end_station_name,usertype
+order by
+num_trips DESC
+limit 10
